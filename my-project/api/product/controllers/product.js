@@ -5,4 +5,10 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+    async find(ctx){
+        console.log(123)
+        const products = await strapi.services.product.find(ctx.query);
+        return products.map(product=> product.title)
+    }
+};
