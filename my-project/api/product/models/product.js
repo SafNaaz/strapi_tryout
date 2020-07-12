@@ -5,4 +5,11 @@
  * to customize this model
  */
 
-module.exports = {};
+module.exports = {
+    lifecycles: {
+    async afterFind(results, params, populates){
+        console.log('After fetch..')
+        console.log(results)
+    }
+}
+};
